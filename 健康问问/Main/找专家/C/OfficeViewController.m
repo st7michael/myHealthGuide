@@ -19,10 +19,6 @@
     [super viewDidLoad];
     [self _loadData];
     [self setTableView];
-    
-    
-    
-    
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -72,14 +68,11 @@
     UINib *nib=[UINib nibWithNibName:@"OfficeTableViewCell" bundle:[NSBundle mainBundle]];
     [_tableView registerNib:nib forCellReuseIdentifier:@"cell"];
     [_tableView setTableFooterView:[[UIView alloc] initWithFrame:CGRectZero]];
-    
-
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return 1;
-
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -93,32 +86,24 @@
     OfficeTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     NSDictionary *dict=_officeArray[indexPath.row];
     cell.nameLabel.text=[dict objectForKey:@"name"];
+    
     cell.textView.text=[dict objectForKey:@"message"];
+    
+    
     NSString *text=[dict objectForKey:@"message"];
-    
-    CGFloat height=(text.length/24+1)*20+10;
-
+    cell.textView.editable = NO;
+    CGFloat height=(text.length/20+1)*20+10;
     cell.textView.height=height;
-    
-
     return cell;
-
 }
 
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     NSDictionary *dict=_officeArray[indexPath.row];
+    
     NSString *text=[dict objectForKey:@"message"];
     
-    CGFloat height=(text.length/24+1)*20+40;
-    
-    
-    
-    
+    CGFloat height=(text.length/20+1)*20+40;
     return height;
-
-
 }
 
 - (void)didReceiveMemoryWarning {
@@ -126,14 +111,5 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

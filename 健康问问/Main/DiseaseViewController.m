@@ -94,7 +94,7 @@
     NSString *title2=[title1 stringByReplacingOccurrencesOfString:@"</font>" withString:@""];
   
     cell.textLabel.text=title2;
-    
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 
 }

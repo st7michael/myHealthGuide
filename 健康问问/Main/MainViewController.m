@@ -22,16 +22,9 @@
 @interface MainViewController ()
 
 @end
-
-
-
 @implementation MainViewController
-
-
 - (void)viewWillAppear:(BOOL)animated{
     self.navigationController.navigationBar.hidden = YES;
-    
-
 }
 
 - (IBAction)btAction1:(id)sender {
@@ -47,7 +40,6 @@
     
     [self.navigationController pushViewController:vc animated:NO];
 }
-//买药按钮
 - (IBAction)btAction3:(id)sender {
     
     buyTabletViewController *buyViewC = [[buyTabletViewController alloc]init];
@@ -164,68 +156,49 @@
         _textFieldBgView.backgroundColor=[UIColor clearColor];
         [_textFieldBgView setFrame:CGRectMake(0, 182, KWidth, 49)];
        
-        [_textField setTop:192];
-     
-       
+        [_textField setTop:157];
         [_textField endEditing:YES];
         
         _textField.text=@"";
     } completion:nil];
-   
-   
-  
-
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    
-  
-        
     return 1;
-
-
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-   
-   
-        
     return 3;
-
-
 }
 
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
     cell.textLabel.font=[UIFont systemFontOfSize:12];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     if (indexPath.row==0) {
-    cell.textLabel.text=@"牙龈炎";
+        cell.textLabel.text=@"牙龈炎";
         cell.textLabel.textColor=[UIColor greenColor];
     }
     else if(indexPath.row==1)
     {
         cell.textLabel.text=@"高血压";
         cell.textLabel.textColor=[UIColor orangeColor];
-    
     }
     else
     {
         cell.textLabel.text=@"心血管疾病";
         cell.textLabel.textColor=[UIColor grayColor];
-    
     }
   
     return cell;
- 
 }
 
 
 -(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
 {
-
     if ([string isEqualToString:@"\n" ]) {
         if (textField.text.length>0)
         {
@@ -234,15 +207,9 @@
             _tableView.hidden=YES;
             self.navigationController.navigationBar.hidden=NO;
             [self.navigationController pushViewController:vc animated:nil];
-            
-          
         }
-      
     }
-    
     return YES;
-
-
 }
 - (void)_setTopView
 {
@@ -256,7 +223,6 @@
     _scrollView.pagingEnabled=YES;
     _scrollView.showsHorizontalScrollIndicator=NO;
     _scrollView.showsVerticalScrollIndicator=NO;
-    
     _pc=[[UIPageControl alloc]initWithFrame:CGRectMake(80, 120,200,60)];
     _pc.numberOfPages=4;
     [_pc addTarget:self action:@selector(pageAction) forControlEvents:UIControlEventTouchUpInside];
@@ -265,24 +231,19 @@
     [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(timeAction) userInfo:nil repeats:YES];
 
 }
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
      DiseaseViewController *vc=[[DiseaseViewController alloc]init];
     if (indexPath.row==0) {
-       
         vc.diseaseName=@"牙龈炎";
-        
     }
     else if(indexPath.row==1)
     {
-    
         vc.diseaseName=@"高血压";
     }
     else if (indexPath.row==2)
     {
          vc.diseaseName=@"心血管疾病";
-    
     }
 
     _tableView.hidden=YES;
@@ -295,46 +256,22 @@
 {
     NSInteger xNum=_pc.currentPage;
     [_scrollView setContentOffset:CGPointMake(xNum*KWidth, -20)];
-
-    
 }
-
 -(void)timeAction
 {
     _page++;
     if (_page>=4) {
         _page=0;
     }
-    
     [_scrollView setContentOffset:CGPointMake(_page*KWidth, -20)];
-    
-
-
 }
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    
-    
     _pc.currentPage=scrollView.contentOffset.x/KWidth;
-    
-    
-    
-    
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 
 @end

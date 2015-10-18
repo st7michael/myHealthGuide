@@ -342,6 +342,8 @@
 		4130F71A1BBE985600E5E8BE /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4130F7191BBE985600E5E8BE /* Icon.png */; settings = {ASSET_TAGS = (); }; };
 		4130F71C1BBE98E300E5E8BE /* IMG_9230.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 4130F71B1BBE98E300E5E8BE /* IMG_9230.JPG */; settings = {ASSET_TAGS = (); }; };
 		4130F71E1BBE9C1E00E5E8BE /* IMG_9239.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 4130F71D1BBE9C1E00E5E8BE /* IMG_9239.PNG */; settings = {ASSET_TAGS = (); }; };
+		4149D42C1BD29B100016810F /* twoCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4149D42B1BD29B100016810F /* twoCodeViewController.m */; settings = {ASSET_TAGS = (); }; };
+		4149D42E1BD29D950016810F /* IMG_9436.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 4149D42D1BD29D950016810F /* IMG_9436.JPG */; settings = {ASSET_TAGS = (); }; };
 		414BB2DE1B99772500169792 /* detailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 414BB2DD1B99772500169792 /* detailViewController.m */; };
 		414BB2E11B9AC3C300169792 /* model.m in Sources */ = {isa = PBXBuildFile; fileRef = 414BB2E01B9AC3C300169792 /* model.m */; };
 		414BB3041B9AC66500169792 /* MKAnnotationView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 414BB2E41B9AC66500169792 /* MKAnnotationView+WebCache.m */; };
@@ -850,6 +852,9 @@
 		4130F7191BBE985600E5E8BE /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		4130F71B1BBE98E300E5E8BE /* IMG_9230.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_9230.JPG; sourceTree = "<group>"; };
 		4130F71D1BBE9C1E00E5E8BE /* IMG_9239.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_9239.PNG; sourceTree = "<group>"; };
+		4149D42A1BD29B100016810F /* twoCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = twoCodeViewController.h; sourceTree = "<group>"; };
+		4149D42B1BD29B100016810F /* twoCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = twoCodeViewController.m; sourceTree = "<group>"; };
+		4149D42D1BD29D950016810F /* IMG_9436.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_9436.JPG; sourceTree = "<group>"; };
 		414BB2DC1B99772500169792 /* detailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = detailViewController.h; sourceTree = "<group>"; };
 		414BB2DD1B99772500169792 /* detailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = detailViewController.m; sourceTree = "<group>"; };
 		414BB2DF1B9AC3C300169792 /* model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = model.h; sourceTree = "<group>"; };
@@ -1674,6 +1679,9 @@
 				414BB3211B9D39B800169792 /* selfViewController.m */,
 				4121DFD31B9EBCA7004D027B /* shopViewController.h */,
 				4121DFD41B9EBCA7004D027B /* shopViewController.m */,
+				4149D42A1BD29B100016810F /* twoCodeViewController.h */,
+				4149D42B1BD29B100016810F /* twoCodeViewController.m */,
+				4149D42D1BD29D950016810F /* IMG_9436.JPG */,
 			);
 			path = C;
 			sourceTree = "<group>";
@@ -2069,6 +2077,7 @@
 				4130F71C1BBE98E300E5E8BE /* IMG_9230.JPG in Resources */,
 				4121E1C71BA000EE004D027B /* customer_icon_ban@2x.png in Resources */,
 				4121E1301BA000EE004D027B /* animation_hzjd3@3x.png in Resources */,
+				4149D42E1BD29D950016810F /* IMG_9436.JPG in Resources */,
 				4121E1F71BA000EE004D027B /* desktoo_cha1_@3x.png in Resources */,
 				4121E15C1BA000EE004D027B /* bj文字场景@2x.png in Resources */,
 				4121E1271BA000EE004D027B /* aixinhui_zhensuo.png in Resources */,
@@ -2357,6 +2366,7 @@
 				855EF21A1BA55B4C004B61F4 /* MJRefreshStateHeader.m in Sources */,
 				414BB31C1B9AFD8200169792 /* detailModel.m in Sources */,
 				855EF2121BA55B4C004B61F4 /* MJRefreshBackNormalFooter.m in Sources */,
+				4149D42C1BD29B100016810F /* twoCodeViewController.m in Sources */,
 				855EF2081BA55B4C004B61F4 /* MJRefreshHeader.m in Sources */,
 				4121E2571BA00192004D027B /* DealText.m in Sources */,
 				85D3DE9B1BA543B300C65AE2 /* HospitalDetailViewController.m in Sources */,

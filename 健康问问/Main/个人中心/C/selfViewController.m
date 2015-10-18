@@ -10,7 +10,7 @@
 #import "Common.h"
 #import "shopViewController.h"
 #import <sqlite3.h>
-
+#import "twoCodeViewController.h"
 @interface selfViewController (){
     UITableView *_tableView;
     UIImage *_image;
@@ -65,7 +65,7 @@
         //add name
         UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake((KWidth-180)/2, 40+70+10, 180, 20)];
         label.backgroundColor = [UIColor clearColor];
-        label.text = @"stanincountry";
+        label.text = @"Michael";
         label.textAlignment = UITextAlignmentCenter;
         
         [cell.contentView addSubview:label];
@@ -208,7 +208,12 @@
         [self.navigationController pushViewController:shopVC animated:NO];
         shopVC.title = @"我的购物车";
     }
+    if (indexPath.row == 6) {
+        twoCodeViewController *code = [[twoCodeViewController alloc]init];
+        [self.navigationController pushViewController:code animated:NO];
+    }
 }
+
 
 #pragma -mark BASE
 - (void)_createViews{

@@ -46,9 +46,6 @@
     vc.hospitalID=_hospitalID;
     
     [self.navigationController pushViewController:vc animated:YES];
-    
-
-
 }
 
 - (void)_loadData
@@ -111,6 +108,7 @@
         NSString *finalSummary=[trimmendSummary stringByReplacingOccurrencesOfString:@"</p>" withString:@""];
         
         _summaryTextView.text=finalSummary;
+        _summaryTextView.editable = NO;
         if ([[_hospitalDict objectForKey:@"logo"] isEqualToString:@"img/hospital/default.jpg"]) {
             [_iconView setImage:[UIImage imageNamed:@"hospital.jpg"]];
         }

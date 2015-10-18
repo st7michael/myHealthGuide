@@ -122,8 +122,6 @@
     }
     model *d = [[model alloc]init];
     d = _medArray[indexPath.row];
-//    NSLog(@"%@",d.title);
-//    NSLog(@"%ld",indexPath.row);
     cell.textLabel.text = d.title;
     return cell;
 }

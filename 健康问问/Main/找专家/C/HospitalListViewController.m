@@ -219,15 +219,11 @@
     {
         NSString *urlStr=[NSString stringWithFormat:@"http://www.1ccf.com//%@",str];
         [cell.iconView sd_setImageWithURL:[NSURL URLWithString:urlStr] placeholderImage:nil];
-    
-    
     }
     cell.addressLable.text=[dict objectForKey:@"address"];
     cell.titleLable.text=[dict objectForKey:@"name"];
-    
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
-
-
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -235,20 +231,13 @@
     HospitalDetailViewController *vc=[[HospitalDetailViewController alloc]initWithNibName:@"HospitalDetailViewController" bundle:[NSBundle mainBundle]];
     NSDictionary *dict=_hospitaclArray[indexPath.row];
     vc.hospitalID=[dict objectForKey:@"id"];
-  
     [self.navigationController pushViewController:vc animated:YES];
-
-
-
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
     return 86;
-
-
-
 }
 
 - (IBAction)addRessAction:(id)sender {
@@ -261,8 +250,6 @@
         [_pickerView setTop:19];
         [_tableView setTop:160];
         [UIView commitAnimations];
-        
-    
     }
     else
     {
@@ -273,11 +260,7 @@
         [_tableView setTop:86];
         [_pickerView setTop:-80];
         [UIView commitAnimations];
-        
-    
     }
-    
-    
 }
 
 #pragma ------------------------dealwith pickView------------------------------------------------
@@ -286,17 +269,10 @@
 rowHeightForComponent:(NSInteger)component
 {
     return 18;
-    
-    
-
-
 }
 -(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
 {
-    
     return 2;
-
-
 }
 
 -(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
@@ -314,13 +290,8 @@ rowHeightForComponent:(NSInteger)component
             num=array.count;
         }
     }
-    
-
- 
     return num;
 }
-
-
 
 
 -(UIView*)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view
@@ -342,33 +313,21 @@ rowHeightForComponent:(NSInteger)component
         NSArray *array=[[NSArray alloc]init];
         array=_cityArray[index];
         NSDictionary *dict=array[row];
-        
-        
         label.text=[dict objectForKey:@"city"];
-
     }
-    
-    
     return label;
-    
-    
-    
-
-
 }
 
 -(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
     if (component==0) {
         index=row;
-       
         if (row==0||row==1||row==2||row==3) {
             _hospitalID=[NSString stringWithFormat:@"%li",2*(row+1)];
             _page=1;
             _isReshData=YES;
              [self _loadHospitalData];
         }
-        
         [pickerView reloadAllComponents];
         
     }
@@ -376,34 +335,16 @@ rowHeightForComponent:(NSInteger)component
         NSArray *array=[[NSArray alloc]init];
         array=_cityArray[index];
         NSDictionary *dict=array[row];
-        
         _hospitalID=[dict objectForKey:@"id"];
         _page=1;
         _isReshData=YES;
          [self _loadHospitalData];
-        
     }
-    
-   
-    
 }
-
-
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

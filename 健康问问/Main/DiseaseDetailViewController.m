@@ -32,10 +32,7 @@
     NSString *str=[_dict objectForKey:@"img"];
     NSString *urlStr=[NSString stringWithFormat:@"http://www.1ccf.com//%@",str];
     
-    
     [_diseaseImageView sd_setImageWithURL:[NSURL URLWithString:urlStr]];
-    
-    
      NSString *context=[_detailDict objectForKey:@"summary"];
      context=[context stringByReplacingOccurrencesOfString:@"<p>" withString:@""];
     
@@ -51,9 +48,6 @@
 
     context=[ context stringByAppendingString:durgText];
     _contextView.text=context;
-    
-
-
 }
 -(void)_loadData
 {
@@ -100,14 +94,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
