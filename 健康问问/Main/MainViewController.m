@@ -145,14 +145,12 @@
 
 -(void)buttonAction
 {
-    
-   
     [_tableView setFrame:CGRectMake(0, 700, KWidth, KHeight-69)];
     _tableView.hidden=YES;
 
     [_textField setWidth:359];
-  
-    [UIView animateWithDuration:0.5 delay:0 options:UIViewAnimationOptionTransitionCurlDown animations:^{
+  //UIViewAnimationOptionTransitionCurlDown
+    [UIView animateWithDuration:0.5 delay:0 options:UIViewAnimationOptionTransitionFlipFromTop animations:^{
         _textFieldBgView.backgroundColor=[UIColor clearColor];
         [_textFieldBgView setFrame:CGRectMake(0, 182, KWidth, 49)];
        

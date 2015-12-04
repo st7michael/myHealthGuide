@@ -2,7 +2,7 @@
 //  DiseaseViewController.h
 //  健康问问
 //
-//  Created by  枫自飘零 on 15/9/11.
+//  Created by Yiqiao on 15/9/11.
 //  Copyright (c) 2015年  枫自飘零. All rights reserved.
 //
 

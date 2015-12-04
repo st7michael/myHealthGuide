@@ -24,8 +24,6 @@
 }
 
 - (void)deleteData:(NSString*)numId{
-    
-   // NSString *sql =[@"delete from buylist where name =" stringByAppendingString:name];
     NSString *filePath = [self filePath];
     sqlite3 *pDb = NULL;
     sqlite3_stmt *pStmt = NULL;
